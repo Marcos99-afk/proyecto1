@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import Tarjeta from './components/Tarjeta'
+import Tarjeta from './componentes/Tarjeta'
+import Cronometro from './componentes/Cronometro'
+import Tema from './componentes/Tema'
 
 import './App.css'
 
@@ -25,8 +27,8 @@ function App() {
   return (
     <div className="container my-4">
       <h1>Mi primera aplicación React</h1>
-      <Saludo nombre="Marcos" />
-      <div className="card h-100">
+      {/*<Saludo nombre="Marcos" />*/}
+      {/*<div className="card h-100">
         <div className="card-body">
           <span className="card-title">Animales</span>
           <span className="card-text">Lista de animales</span>
@@ -37,24 +39,42 @@ function App() {
             </ul>
         </div>
       </div>
+      */}
 
-       <div className="card h-100">
+      {/*<div className="card h-100">
         <div className="card-body">
           <span className="card-title">Ofertas</span>
           <span className="card-text">Lista de ofertas</span>
+          <div className="row">
             <ul>
               {ofertas.map((ofertas) => (
+                <div className="col-12 col-md-6 col-lg-4" key={ofertas.id}>
                 <li key={ofertas.id}>
-                  <Tarjeta titulo={ofertas.titulo} 
+                  <Tarjeta key={ofertas.id}
+                  titulo={ofertas.titulo} 
                   descripcion={ofertas.descripcion} 
                   precio={ofertas.precio} 
                   oferta={ofertas.oferta} 
                   />
                 </li>
+                </div>
               ))}
             </ul>
+          </div>
+        </div>
+      </div>*/}
+
+      <div className="card h-100">
+        <div className="card-body">
+          <span className="card-title">Cronómetro</span>
+          <br></br>
+          <span className="card-text">Cronómetro en React</span>
+          <Cronometro />
         </div>
       </div>
+
+
+    
     </div>
   )
 
