@@ -28,9 +28,16 @@ function Cronometro() {
     setSegundos(0)
   }
 
+  function formatoSegundos(segundos) {
+    const horas = Math.floor(segundos / 3600)
+    const minutos = Math.floor((segundos % 3600) / 60)
+    const segundosRestantes = segundos % 60
+    return `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundosRestantes.toString().padStart(2, '0')}`
+  }
+
   return (
     <div>
-      <h2>{segundos} segundos</h2>
+      <h2>{formatoSegundos(segundos)}</h2>
       <button onClick={iniciarCronometro}>Iniciar</button>
       <button onClick={detenerCronometro}>Detener</button>
       <button onClick={reiniciarCronometro}>Reiniciar</button>

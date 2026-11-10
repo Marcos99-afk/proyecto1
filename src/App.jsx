@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Tarjeta from './componentes/Tarjeta'
 import Cronometro from './componentes/Cronometro'
-import Tema from './componentes/Tema'
+import { TemaProvider, BotonTema } from './componentes/Tema'
+import Semaforo from './componentes/semaforo'
 
 import './App.css'
 
@@ -63,13 +64,25 @@ function App() {
           </div>
         </div>
       </div>*/}
+      
+      <BotonTema /> 
 
-      <div className="card h-100">
+      {/*<div className="card h-100">
         <div className="card-body">
           <span className="card-title">Cronómetro</span>
           <br></br>
           <span className="card-text">Cronómetro en React</span>
           <Cronometro />
+        </div>
+      </div>
+      */}
+
+      <div className="card h-100">
+        <div className="card-body">
+          <span className="card-title">Semaforo</span>
+          <br></br>
+          <span className="card-text">Semaforo en React</span>
+          <Semaforo />
         </div>
       </div>
 
