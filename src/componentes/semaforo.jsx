@@ -138,12 +138,13 @@ function Semaforo() {
         />
     </div>
     <div>
-      <h2>
+        <h2 style={{ minHeight: '1.5em' }}>
         {luces.gris ? 'Gris' : ''}
         {luces.rojo ? 'Rojo' : ''}
         {luces.ambar && (!state.averiado || parpadeo) ? 'Ámbar' : ''}
         {luces.verde ? 'Verde' : ''}
       </h2>
+
       <h3>Ciclos: {state.ciclos}</h3>
       <h3>{state.averiado ? 'Averiado' : ''}</h3>
 

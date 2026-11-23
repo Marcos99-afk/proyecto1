@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext, useRef } from 'react'
 import Tarjeta from './componentes/Tarjeta'
 import Cronometro from './componentes/Cronometro'
 import { TemaProvider, BotonTema } from './componentes/Tema'
 import Semaforo from './componentes/semaforo'
+import FormularioAutoenfocado from './componentes/FormularioAutoenfocado'
 
 import './App.css'
 
@@ -25,9 +26,20 @@ const ofertas = [
 ]
 
 function App() {
+  const titulo = useRef(null)
+
+  function changeborder(comprobacion) {
+    if(comprobacion === true){
+    titulo?.current?.style.setProperty('border', '2px solid red')
+    }else{
+    titulo?.current?.style.setProperty('border', 'none')
+    }
+
+  }
+ 
   return (
     <div className="container my-4">
-      <h1>Mi primera aplicación React</h1>
+      <h1 ref={titulo}>Mi primera aplicación React</h1>
       {/*<Saludo nombre="Marcos" />*/}
       {/*<div className="card h-100">
         <div className="card-body">
@@ -67,7 +79,7 @@ function App() {
       
       <BotonTema /> 
 
-      {/*<div className="card h-100">
+      <div className="card h-100">
         <div className="card-body">
           <span className="card-title">Cronómetro</span>
           <br></br>
@@ -75,7 +87,6 @@ function App() {
           <Cronometro />
         </div>
       </div>
-      */}
 
       <div className="card h-100">
         <div className="card-body">
@@ -83,6 +94,15 @@ function App() {
           <br></br>
           <span className="card-text">Semaforo en React</span>
           <Semaforo />
+        </div>
+      </div>
+
+      <div className="card h-100">
+        <div className="card-body">
+          <span className="card-title">Formulario Autoenfocado</span>
+          <br></br>
+          <span className="card-text">Formulario que se enfoca automáticamente</span>
+          <FormularioAutoenfocado comprobacion={(changeborder)}></FormularioAutoenfocado>
         </div>
       </div>
 
